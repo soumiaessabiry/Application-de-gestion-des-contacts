@@ -1,3 +1,6 @@
+<?php
+include("../PHP/connexion.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
