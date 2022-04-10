@@ -16,18 +16,18 @@ include("../PHP/connexion.php");
         include("../HTML/navbar.php");
     ?>
     <!-- hello -->
-    <div class="row"  style="width:100vw;">
-        <div class="card  container-fluid p-5" style="background:#9090f241;">
-            <div class="card-body" >
-                <h5 class="card-title  fw-bold "  style="font-size: 100px;">Hello !</h5>
-                <p class="card-text text-bold "  style="font-size: 35px;">
-                <a href="../HTML/Sign_up.php" class="acard">Sign up</a> to start creating your contacts list.<br>
-                Already have an account?<a href="../HTML/login.php" class="acard">Login here.</a>      
+    <div class="row ">
+            <div class="card card1 text-center m-4 p-5 " style="width:100vw;height:100vh; ">
+                <div class="card-body " >
+                    <h5 class="card-title  fw-bold "  style="font-size: 100px;">Hello !</h5>
+                    <p class="card-text text-bold "  style="font-size: 35px;">
+                    <a href="../HTML/Sign_up.php" class="acard">Sign up</a> to start creating your contacts list.<br>
+                    Already have an account?<a href="../HTML/login.php" class="acard">Login here.</a>
+                </div>
             </div>
-        </div>   
     </div>
     <!-- image hello -->
-    <div class="row"  style="width:100vw;">
+    <div class="row "  style="width:100vw;">
         <img src="../image/ACC2.svg" class="img-fluid" style="height:50vh;">
     </div>
     <?php 

@@ -31,3 +31,19 @@ a.btn{
     border-bottom: 5px solid #1b1a18 ;
     padding-bottom: 10px !important;
 }
+.card1{
+    width: 100%;
+    height: 100% !important;
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%   {background-color: rgba(222, 115, 115, 0.748);}
+    15%  {background-color: rgba(118, 181, 233, 0.584);}
+    30%  {background-color: rgba(111, 111, 235, 0.521);}
+    45% {background-color: rgba(129, 230, 129, 0.595);}
+    60%  {background-color: rgba(186, 186, 108, 0.645);}
+    75%  {background-color: rgba(223, 116, 203, 0.591);}
+    100% {background-color: rgba(204, 122, 148, 0.523);}
+  }

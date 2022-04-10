@@ -19,7 +19,7 @@ include("../HTML/navbar.php");
     <!-- form -->
     <div class="container ">
             <form  method="POST"  name="formsing" onsubmit="return validateform()">
-                <h1 class="text-center fw-bold text-warning">Authenticate</h1>
+                <h1 class="authent text-center fw-bold ">Sign up</h1>
                 <label><b>Username</b></label><br>
                 <input type="text" placeholder="Username" name="username" onkeydown=" validateform();" ><br>
                     <span  style="color: red; font-weight:bold;" id="user"></span><br>
