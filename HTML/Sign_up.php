@@ -21,13 +21,13 @@ include("../HTML/navbar.php");
             <form  method="POST"  name="formsing" onsubmit="return validateform()">
                 <h1 class="text-center fw-bold text-warning">Authenticate</h1>
                 <label><b>Username</b></label><br>
-                <input type="text" placeholder="Username" name="username"  onkeydown="validateform()"><br>
+                <input type="text" placeholder="Username" name="username" onkeydown=" validateform();" ><br>
                     <span  style="color: red; font-weight:bold;" id="user"></span><br>
                 <label><b>Password</b></label><br>
-                <input type="password" placeholder="Password" name="password" ><br>
+                <input type="password" placeholder="Password" name="password" onkeydown="validateform();"><br>
                    <span style="color: red; font-weight:bold;" id="pwd"></span><br>
                 <label><b>password Verify</b></label><br>
-                <input type="password" placeholder="password Verify" name="pwdverf" ><br>
+                <input type="password" placeholder="password Verify" name="pwdverf" onkeydown="validateform();"><br>
                     <span style="color: red; font-weight:bold;" id="vepwd"></span><br>
                 <input type="submit" name="submit" id='submite'value='LOGIN'  >
                 <p class="text-center fw-bold ">Already have an account?<a href="../HTML/login.php" class="acard"> Login</a> here.</p>

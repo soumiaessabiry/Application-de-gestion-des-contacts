@@ -1,15 +1,11 @@
 body{
-    background:#00bfa63e !important;
+    background-color: #9692e884 !important;
 }
 .navbar{
-    background-color: #00BFA6;
+    background-color: #9792E8;
     margin-bottom: 60px !important;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
-}
-button:hover{
-    background-color:#F9A826!important ;
-
+    
 }
 a{
     text-decoration: none;
@@ -33,11 +29,6 @@ form {
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-/* #container h1{
-    width: 38%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-} */
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
@@ -47,13 +38,13 @@ input[type=text], input[type=password] {
     margin: 8px 0;
     display: inline-block;
     border-radius: 12px;
-    border: 1px solid #ccc;
+    border: 3px solid #9792E8 ;
     box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
 input[type=submit] {
-    background-color: #F9A826;
+    background-color: #9692e8ad;
     color: white;
     padding: 14px 30px;
     border-radius: 12px;
@@ -65,7 +56,14 @@ input[type=submit] {
 }
 input[type=submit]:hover {
     background-color: white;
-    color: #F9A826;
+    color: #9792E8;
     font-weight: bold;
-    border: 2px solid #F9A826;
+    border: 3px solid #9792E8 ;
+}
+input[type=text]:hover {
+    font-weight: bold;
+    border: 3px solid #9792E8 ;
+}
+.authent{
+    color: #444171;
 }

@@ -26,31 +26,56 @@
 // document.getElementById("submite").disabled = true;
 
 function validateform(){
+    let user =document.formsing.username.value;
+    let pwd =document.formsing.password.value;
+    let  vepwd=document.formsing.pwdverf.value;
+    let spuser=document.getElementById("user");
+    let sppwd=document.getElementById("pwd");
+    let spvpwd=document.getElementById("vepwd");
+        if (user=="") {
+            spuser.innerHTML="Ce champt ne peut pas etre vide";
+            spuser.style.color="red";
 
-    let form=document.getElementById("formsinge");
-    let user=document.formsing.username.value;
-    let pswd=document.formsing.password.value;
-    let vpswd=document.formsing.pwdverf.value;
+            return false;
+        } else if(user!=""  ) {
+            spuser.innerHTML="Ce champt et  valide";
+            spuser.style.color="green";
 
-    if ((user=="")) {
-        document.getElementById("user").innerHTML="Ce champt ne peut pas etre vide";
-        return false;
-       
-    }
-    if (pswd=="") {
-        document.getElementById("pwd").innerHTML="Ce champt ne peut pas etre vide";
-        return false;
-    }
-    if (vpswd=="") {
-        document.getElementById("vepwd").innerHTML="Ce champt ne peut pas etre vide";
-        return false;
-    }
-  else{
-    return true;
-
-  }
-    
+        }
+        if (pwd=="") {
+            sppwd.innerHTML="Ce champt ne peut pas etre vide";
+            sppwd.style.color="red";
+            return false;
+        } else if(pwd!="") {
+            sppwd.innerHTML="Ce champt et  valide";
+            sppwd.style.color="green";
+        }
+        if (vepwd=="") {
+            spvpwd.innerHTML="Ce champt ne peut pas etre vide";
+            spvpwd.style.color="red";
+            return false;
+            
+        }else {
+            spvpwd.innerHTML="Ce champt et  valide";
+            spvpwd.style.color="green";
+        
+        } 
 }
+// function validerejex() {
+//     let user =document.formsing.username.value;
+//     let  pwd =document.formsing.password.value;
+//     let  vepwd=document.formsing.pwdverf.value;
+//     let spuser=document.getElementById("user");
+//     let sppwd=document.getElementById("pwd");
+//     let spvpwd=document.getElementById("vepwd");
+//     rejexuser=/^[a-zA-Z]{3,}$/;
+//     if (condition) {
+        
+//     }
+
+
+
+// }
 // return false;
 // if (user.match(rejexname)) {
 //     form.classList.add("valid");  

@@ -16,8 +16,8 @@ include("../PHP/connexion.php");
         include("../HTML/navbar.php");
     ?>
     <!-- hello -->
-    <div class="row"  style="width:100vw;";>
-        <div class="card  container-fluid p-5"">
+    <div class="row"  style="width:100vw;">
+        <div class="card  container-fluid p-5" style="background:#9090f241;">
             <div class="card-body" >
                 <h5 class="card-title  fw-bold "  style="font-size: 100px;">Hello !</h5>
                 <p class="card-text text-bold "  style="font-size: 35px;">
@@ -28,7 +28,7 @@ include("../PHP/connexion.php");
     </div>
     <!-- image hello -->
     <div class="row"  style="width:100vw;">
-        <img src="../image/hellomg.png" class="img-fluid" style="height:60vh;">
+        <img src="../image/ACC2.svg" class="img-fluid" style="height:50vh;">
     </div>
     <?php 
         include("../HTML/cdn.php");

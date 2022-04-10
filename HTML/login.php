@@ -16,7 +16,7 @@ include("../HTML/navbar.php");
     <!-- form -->
     <div class="container ">
             <form action="#" method="POST">
-                <h1 class="text-center fw-bold text-warning">Authenticate</h1>
+                <h1 class="text-center fw-bold authent">Authenticate</h1>
                 <label><b>Username</b></label><br>
                 <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
                 <label><b>Password</b></label><br>

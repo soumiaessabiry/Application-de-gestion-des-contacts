@@ -3,7 +3,7 @@ body{
     background-color: #00BFA6;
 }
 .navbar{
-    background-color: #00BFA6;
+    background-color: #9792E8;
     margin-bottom: 20px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -16,13 +16,16 @@ body{
     overflow-x: hidden !important;
 }
 button:hover{
-    background-color:#F9A826!important ;
-   
+    background-color: #a3a0d3b5 !important;
+   color: aliceblue !important;
+}
+a.btn{
+   color: aliceblue !important;
 }
 
-.btn a{
+/* .btn a{
      color:black;
-}
+} */
 .contact{
     border-left: 5px solid #0d0c0b ;
     border-bottom: 5px solid #1b1a18 ;
