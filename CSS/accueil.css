@@ -1,7 +1,4 @@
-body{
-   
-    background-color: #00BFA6;
-}
+
 .navbar{
     background-color: #9792E8;
     margin-bottom: 20px;
@@ -39,11 +36,10 @@ a.btn{
     animation-iteration-count: infinite;
 }
 @keyframes example {
-    0%   {background-color: rgba(222, 115, 115, 0.748);}
+    0%  {background-color: rgba(111, 111, 235, 0.521);}
     15%  {background-color: rgba(118, 181, 233, 0.584);}
     30%  {background-color: rgba(111, 111, 235, 0.521);}
     45% {background-color: rgba(129, 230, 129, 0.595);}
-    60%  {background-color: rgba(186, 186, 108, 0.645);}
-    75%  {background-color: rgba(223, 116, 203, 0.591);}
-    100% {background-color: rgba(204, 122, 148, 0.523);}
+    60%  {background-color: rgba(111, 111, 235, 0.521);}
+    100% {background-color: rgba(118, 181, 233, 0.584);}
   }

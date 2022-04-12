@@ -1,52 +1,47 @@
+
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database="application de gestion des contacts";
-// Create connection
-$conn = new mysqli($servername, $username, $password,$database);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+ session_start();
+  // class connexiondb
+class connexiondb{
+  protected $servaname ="localhost";
+  protected $username="root";
+  protected $password="";
+  protected $databasename="application de gestion des contacts";
+  public function connection(){
+      $connx=mysqli_connect($this->servaname,$this->username, $this->password, $this->databasename);
+      return $connx;
+      if ($connx->connect_error) {
+          echo"eroor";
+      }
+      echo " connection succssfuly";
+  }
 }
-echo "Connected successfully";
+// classe compte
+  class user extends connexiondb{
+      public function creatUser($usernm, $passwrd){
+        $result=$this->connection()->query("SELECT * FROM comptes WHERE username='$usernm' AND password='$passwrd'");
+        if (mysqli_num_rows($result)> 0) {
+            return 10;
+            // username is aredy exist
+        }else{
+               $query="INSERT INTO comptes(`username`, `password`, `signup_date`) VALUES ('$usernm','$passwrd',sysdate())";
+               $result=$this->connection()->query($query);
+               return 20;
+               //creat compte is successfuly
+
+            
+        }
+      }
+
+
+
+}
+
+
+
+
+
+
+
+
 ?>
-<!-- php 
-// class conxdb{
-
-//   protected $servaname;
-//   protected $username;
-//   protected $password;
-//   protected $database;
-//   public $connx=null;
-//   public  function __construct()
-//     {
-//     $this->connx=mysqli_connect(
-//         $this->servaname,
-//         $this->database,
-//         $this->password,
-//         $this->database,
-//       );
-//       if ($this->connx->connect_error) {
-//         echo "error de connexion".$this->connx->connect_error;
-//       }
-//       echo"connecxion successful !!";
-//     }
-// }
-?> -->
-
-<!--  $this->servaname="localhost";
-    $this->username="root";
-    $this->password="";
-    $this->database="application de gestion des contacts";
-    $conn= new mysqli(
-      $this->servaname,
-      $this->database,
-      $this->password,
-      $this->database
-
-    );
-    return $conn;
-
-  } -->

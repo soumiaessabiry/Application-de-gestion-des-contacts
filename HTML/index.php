@@ -16,13 +16,13 @@ include("../PHP/connexion.php");
         include("../HTML/navbar.php");
     ?>
     <!-- hello -->
-    <div class="row ">
-            <div class="card card1 text-center m-4 p-5 " style="width:100vw;height:100vh; ">
+    <div class="row">
+            <div class="card card1 container-fluid p-4 mt-5" style="width:90%;height:400px">
                 <div class="card-body " >
-                    <h5 class="card-title  fw-bold "  style="font-size: 100px;">Hello !</h5>
+                    <h5 class="card-title  fw-bold "  style="font-size: 90px;">Hello !</h5>
                     <p class="card-text text-bold "  style="font-size: 35px;">
                     <a href="../HTML/Sign_up.php" class="acard">Sign up</a> to start creating your contacts list.<br>
-                    Already have an account?<a href="../HTML/login.php" class="acard">Login here.</a>
+                    Already have an account?<a href="../HTML/login.php" class="acard">Login here.</a></p>
                 </div>
             </div>
     </div>

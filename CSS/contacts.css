@@ -1,3 +1,6 @@
+body{
+    background-color: #9692e818 !important;
+}
 .navbar{
     background:#9792E8    ;
     font-weight:bolder;
@@ -5,3 +8,5 @@
     color: white;
 
 }
+
+
