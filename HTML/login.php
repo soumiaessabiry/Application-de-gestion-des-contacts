@@ -1,3 +1,24 @@
+<?php
+include('../PHP/connexion.php');
+   $errpwd="password incorrect";
+   $erraucrep="";
+    if (isset($_SESSION["id"])) {
+        header("location:../HTML/login.php");
+    }
+   $loguser=new login();
+   if (isset($_POST['submite'])) {
+       if($loguser->loginUser($_POST['usernamelog'],$_POST['pwdlog'])=="trouveresultat"){
+          $_SESSION["user"]=true;
+          $_SESSION["id"]=$loguser->idUser();
+          header("location:../HTML/profiluser.php");
+       }
+     else{
+          echo  $erraucrep="user not existe";
+       }
+      
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +39,10 @@ include("../HTML/navbar.php");
             <form action="#" method="POST">
                 <h1 class="text-center fw-bold authent">Authenticate</h1>
                 <label><b>Username</b></label><br>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
+                <input type="text" name="usernamelog" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
                 <label><b>Password</b></label><br>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required><br><br>
-                <input type="submit" id='submit' value='LOGIN' >
+                <input type="password" name="pwdlog" placeholder="Entrer le mot de passe" name="password" required><br><br>
+                <input type="submit" name="submite" id='submit' value='LOGIN' >
                 <p class="text-center fw-bold ">Already have an account?<a href="../HTML/Sign_up.php" class="acard"> Sing up</a> here.</p>
             </form>
     </div>

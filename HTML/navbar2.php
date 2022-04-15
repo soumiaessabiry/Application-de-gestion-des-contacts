@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav ms-auto fw-bold fs-4  mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../HTML/user.php">User</a>
+                    <a class="nav-link" aria-current="page" href="../HTML/profiluser.php">User</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="../HTML/contacts.php">Contacts</a>

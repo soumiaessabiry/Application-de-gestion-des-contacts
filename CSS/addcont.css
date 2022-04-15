@@ -9,7 +9,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=email], input[type=number] {
+input[type=text], input[type=email], input[type=number], input[type=textarea] {
     width: 100%;
     padding: 10px 20px;
     font-weight: bold;

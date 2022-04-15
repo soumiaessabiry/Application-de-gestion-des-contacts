@@ -1,3 +1,28 @@
+<?php
+include('../PHP/connexion.php');
+    $selectuser = new select();
+    if (isset($_SESSION["id"])) {
+        $user=$selectuser->slectUser($_SESSION["id"]);
+    }else{
+        header("location:../HTML/index.php");
+    }
+     $contact=new contacts();
+    if(isset($_POST['submit'])){
+       $resulte=$contact->creatContact($_POST["namee"],$_POST["emaile"],$_POST["phonee"],$_POST["addresse"]);
+       if ($resulte) {
+        echo "Successfully inserted contact";
+        }else{
+            echo "failed to insert contact";
+        }
+        
+    }
+    // delet contact 
+    if (isset($_GET['delid']) && !empty($_GET['delid'])) {
+        $deletcontact=$_GET['delid'];
+        $contact->deletContct($deletcontact);
+    }
+    
+?> 
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -30,7 +55,7 @@
                             <input type="email" placeholder="Entre email" id="email" name="emaile" ><br>
                             <span style="color: red; font-weight:bold;" id="eml"></span><br>
                             <label><b>Phone</b></label><br>
-                            <input type="number" placeholder="Entre phone" id="phone" name="phonee" ><br>
+                            <input type="text" placeholder="Entre phone" id="phone" name="phonee" ><br>
                                 <span style="color: red; font-weight:bold;" id="phne"></span><br>
                             <label><b>Address</b></label><br>
                             <input type="text" placeholder="Entre address" id="address" name="addresse"><br>
@@ -49,7 +74,7 @@
     </div>
     <!--  -->
     <div class=" d-flex mb-3">
-    <div class="me-auto p-3"><button type="button" class="btn btn-primary btn-lg">contacts liste</button></div>
+    <div class="me-auto p-3"><button type="button" class="btn btn-info btn-lg pe-5 fw-bold"><?php echo $user["username"];?></button></div>
     <div class="p-3 "><button type="button" class="btn btn-warning  btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add new contact</button></div>
     </div> 
     <section class="bg-light p-5">
@@ -57,6 +82,7 @@
         <table class=" table bg-white table-bordered border-dark ">
         <thead class="bg-light">
             <tr>
+                <th scope="col">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
@@ -65,26 +91,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th data-tile="Name" scope="row">1</th>
-                <td data-tile="Email"  >Mark</td>
-                <td data-tile="Phone" >Otto</td>
-                <td data-tile="Address"  >@mdo</td>
+           <?php 
+               $contactes=$contact->afficheContact();
+                foreach($contactes as $contacte){
+              ?> 
+                 <tr>
+                <th data-tile="id"><?php echo $contacte['id']?></th>
+                <td data-tile="Name"><?php echo $contacte['name']?></td>
+                <td data-tile="Email"><?php echo $contacte['email']?></td>
+                <td data-tile="Phone"><?php echo $contacte['phone']?></td>
+                <td data-tile="Address"><?php echo $contacte['address']?></td>
                 <td data-tile="Option" >
-                <button type="button" class="btn btn-danger">Delet</button>
-                <button type="button" class="btn btn-success">edit</button>
+                <button type="button" class="btn btn-danger"><a href="../HTML/contacts.php?delid=<?php echo $contacte["id"] ?>" class="text-decoration-none">Delet</a></button>
+                <button type="button" class="btn btn-success"><a href="../HTML/edite.php?editid=<?php echo $contacte["id"]?>" class="text-decoration-none">edit</a></button>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacknn!df kkggnsfklvklnkdn!lvnglkfnob</td>
-                <td>Thorntonacknn!df kkggnsfklvklnkdn!lvnglkfnob</td>
-                <td>@fat</td>
-                <td>
-                <button type="button" class="btn btn-danger">Delet</button>
-                <button type="button" class="btn btn-success">edit</button>
-                </td>
-            </tr>
+              
+              <?php } ?>
         </tbody>
         </table>
     </div>

@@ -8,7 +8,8 @@ function  ValidateAddNeContc(){
     var Address = document.getElementById("address").value;
     var spaddres = document.getElementById("phne");
     var reg=/^[a-zA-Z]{3,}$/;
-    var regemail=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+    var regemail=/^[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$/;
+    // let regexphone=/^[(]{1}[0-9]{3}[)]{1}[0-9]{10}$/;
     // inpute=name
     if ( Name==""  ) {
        spname.innerHTML="Fill the Name ";
@@ -16,7 +17,7 @@ function  ValidateAddNeContc(){
         return false;
     }
     if ( Name.length<2 ) {
-       spname.innerHTML="Name length must be atleast 3 characters";
+       spname.innerHTML="Name length must be atleast 2 characters";
         spname.style.color="Magenta";
         return false;
     }
@@ -30,19 +31,14 @@ function  ValidateAddNeContc(){
         spname.style.color="green";
     }
      // inpute=email
-    if ( Email==""  ) {
+    if (Email==""  ) {
          spemail.innerHTML="Fill the Email !!";
          spemail.style.color="red";
         return false;
     }
-    if ( Email.length<6 ) {
-         spemail.innerHTML="Email length must be atleast 6 characters !!";
-         spemail.style.color="Magenta";
-        return false;
-    }
     if (!regemail.test(Email) ) {
-        spname.innerHTML="the Email non valide!!! ";
-         spname.style.color="blue";
+         spemail.innerHTML="the Email non valide!!! ";
+         spemail.style.color="blue";
          return false;
     }
     else{
@@ -50,35 +46,40 @@ function  ValidateAddNeContc(){
         spemail.style.color="green"; 
     }
     // input =phone
-    if ( Phone=="" ) {
+    if (Phone=="" ) {
          spphone.innerHTML="Fill the confirm phone !!";
          spphone.style.color="red";
         return false;
     }
-    if (  Phone.length<6) {
-         spphone.innerHTML="confirm phone length must be atleast 6 characters !!";
+    if (Phone.length<15) {
+         spphone.innerHTML="confirm phone length must be atleast 10 characters !!";
          spphone.style.color="Magenta";
         return false;
     }
+    // if (!regexphone.test(Phone)) {
+    //      spphone.innerHTML="format phone incorect  !!";
+    //      spphone.style.color="Magenta";
+    //     return false;
+    // }
     else{
         spphone.innerHTML="confirm phone is valide";
         spphone.style.color="green";
     }
     // input= address
-    if ( Address=="" ) {
-         spaddres.innerHTML="Fill the confirm Address !!";
-         spaddres.style.color="red";
-        return false;
-    }
-    if (  Address.length<6) {
-         spaddres.innerHTML="confirm Address length must be atleast 6 characters !!";
-         spaddres.style.color="Magenta";
-        return false;
-    }
-    else{
-        spaddres.innerHTML="confirm Address is valide";
-        spaddres.style.color="green";
-    }
+    // if ( Address=="" ) {
+    //      spaddres.innerHTML="Fill the confirm Address !!";
+    //      spaddres.style.color="red";
+    //     return false;
+    // }
+    // if (  Address.length<=255) {
+    //      spaddres.innerHTML="confirm Address length must be atleast characters !!";
+    //      spaddres.style.color="Magenta";
+    //     return false;
+    // }
+    // else{
+    //     spaddres.innerHTML="confirm Address is valide";
+    //     spaddres.style.color="green";
+    // }
   
 
 }

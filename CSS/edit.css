@@ -39,6 +39,16 @@ input[type=text], input[type=password]{
     border: 3px solid #9792E8 ;
     box-sizing: border-box;
 }
+input[type=email]{
+    width: 100%;
+    padding: 14px 40px;
+    font-weight: bold;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 12px;
+    border: 3px solid #9792E8 ;
+    box-sizing: border-box;
+}
 
 
 /* Set a style for all buttons */
@@ -54,7 +64,7 @@ input[type=submit] {
     width: 100%;
 }
 input[type=submit]:hover {
-    background-color: white;
+    background-color: rgb(233, 228, 228);
     color: #9792E8;
     font-weight: bold;
     border: 3px solid #9792E8 ;
@@ -62,6 +72,7 @@ input[type=submit]:hover {
 input[type=text]:hover {
     font-weight: bold;
     border: 3px solid #9792E8 ;
+    
 }
 .authent{
     color: #444171;

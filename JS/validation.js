@@ -56,14 +56,8 @@ function  ValidateFormSign(){
         spvepwd.innerHTML="confirm password is valide";
         spvepwd.style.color="green";
     }
-    // cnparer les paswords
-    if ( password != verfipawd) {
-        spvepwd.innerHTML="Passwords are not same !!";
-         spvepwd.style.color="red";
-    }
-    else{
-        alert("Your compte created successfully");
-    }
+
+   
 
 }
 

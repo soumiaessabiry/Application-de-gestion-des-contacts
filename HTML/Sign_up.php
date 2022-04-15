@@ -1,16 +1,23 @@
 <?php
 include('../PHP/connexion.php');
-     $User=new user();
-   if(isset($_POST['submit'])){
-        $resultat = $User->creatUser($_POST["usrname"],$_POST["pasword"]);
-      if ($_POST["pasword"]!=$_POST["pwdverf"]) {
-        echo"<script> alert('password incorect !!')</script>";
-       } elseif($result==10){
-       echo"<script> alert(' username is aredy exist')</script>";
-    }elseif($result==20){
-        echo"<script> alert(' creat compte is success')</script>";
+      if (isset($_SESSION["id"])) {
+        header("location:../HTML/login.php");
     }
-   }
+     $User=new user();
+     $result=0;
+     $error1="password incorect";
+     $error2='';
+    if(isset($_POST['submit'])){
+        if ($_POST["pasword"]==$_POST["pwdverf"]) {
+           if($User->creatUser($_POST["usrname"],$_POST["pasword"])){
+              header("location:../HTML/login.php");
+            }else{
+              echo  $error2="username is aredy exist";
+            }
+        }else{
+        echo $error1;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +36,7 @@ include("../HTML/navbar.php");
 ?>
     <!-- form -->
     <div class="container ">
+        <!-- <span style="colo"><?php echo $error ;?></span> -->
             <form  method="POST"  id="formsing" autocomplete="oof" onsubmit="return ValidateFormSign(); ">
                 <h1 class="authent text-center fw-bold ">Sign up</h1>
                 <label><b>Username</b></label><br>
@@ -52,31 +60,3 @@ include("../HTML/navbar.php");
   
 </body>
 </html>
-<!--  if (isset($_POST['submit'])) {
-            $usernm=$_POST["username"];
-            $pwd=$_POST["password"];
-            $verpwd=$_POST["pwdverf"];
-            if (empty($_POST["username"])||empty($_POST["password"])||empty($_POST["pwdverf"])) {
-                echo"<script>
-                Swal.fire({
-                icon: 'error',
-                title: 'veuillee remplire tous les champs  !!!',
-                 })
-                </script>";
-            }else{
-                //***************insertion des donnee via db**********************//é
-                $sql = "INSERT INTO comptes (username,password,confirme_pwd) VALUES ('$usernm','$pwd','$verpwd')";
-                if (mysqli_query($conn, $sql)) {
-                    echo"<script>
-                    Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Le compte et bien Ajouter ',
-                    showConfirmButton: false,
-                    timer: 1500})
-                    </script>";
-                } 
-                mysqli_close($conn);
-            }
-
-        } -->
