@@ -13,7 +13,7 @@ include('../PHP/connexion.php');
           header("location:../HTML/profiluser.php");
        }
      else{
-          echo  $erraucrep="user not existe";
+          $error='<h3 class="alert alert-danger"><strong>user not existe !!!!!</strong></h3> ';
        }
       
     }
@@ -36,15 +36,20 @@ include("../HTML/navbar.php");
 ?>
     <!-- form -->
     <div class="container ">
-            <form action="#" method="POST">
-                <h1 class="text-center fw-bold authent">Authenticate</h1>
-                <label><b>Username</b></label><br>
-                <input type="text" name="usernamelog" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
-                <label><b>Password</b></label><br>
-                <input type="password" name="pwdlog" placeholder="Entrer le mot de passe" name="password" required><br><br>
-                <input type="submit" name="submite" id='submit' value='LOGIN' >
-                <p class="text-center fw-bold ">Already have an account?<a href="../HTML/Sign_up.php" class="acard"> Sing up</a> here.</p>
-            </form>
+        <form action="#" method="POST">
+            <?php 
+                if (!empty($error)) {
+                    echo $error;
+                }
+            ?>
+            <h1 class="text-center fw-bold authent">Authenticate</h1>
+            <label><b>Username</b></label><br>
+            <input type="text" name="usernamelog" placeholder="Entrer le nom d'utilisateur" name="username" required><br>
+            <label><b>Password</b></label><br>
+            <input type="password" name="pwdlog" placeholder="Entrer le mot de passe" name="password" required><br><br>
+            <input type="submit" name="submite" id='submit' value='LOGIN' >
+            <p class="text-center fw-bold ">Already have an account?<a href="../HTML/Sign_up.php" class="acard"> Sing up</a> here.</p>
+        </form>
     </div>
     <?php 
         include("../HTML/cdn.php");

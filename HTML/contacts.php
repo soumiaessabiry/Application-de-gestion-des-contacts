@@ -10,11 +10,9 @@ require_once('../PHP/connexion.php');
     if(isset($_POST['submit'])){
        $resulte=$contact->creatContact($_POST["namee"],$_POST["emaile"],$_POST["phonee"],$_POST["addresse"],$_SESSION["id"]);
        if ($resulte) {
-        echo "Successfully inserted contact";
-        }else{
-            echo "failed to insert contact";
+           $success='<script>alert("Successfully inserted contact")</script>';
+        // '<h3 class="alert alert-success"><strong>Successfully inserted contact</strong></h3> ';
         }
-        
     }
     // delet contact 
     if (isset($_GET['delid']) && !empty($_GET['delid'])) {
@@ -37,6 +35,11 @@ require_once('../PHP/connexion.php');
     <!-- navbar2 -->
     <?php 
     include("../HTML/navbar2.php");
+    ?>
+     <?php 
+        if (!empty($success)) {
+            echo $success;
+        }
     ?>
     <!-- modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -72,7 +75,7 @@ require_once('../PHP/connexion.php');
             </div>
         </div>
     </div>
-    <!--  -->
+    <!-- table des contacts -->
     <div class=" d-flex mb-3">
     <div class="me-auto p-3"><button type="button" class="btn btn-lg pe-5 fw-bold bg-secondary bg-gradient"><?php echo $user["username"];?></button></div>
     <div class="p-3 "><button type="button" class="btn btn-warning  btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add new contact</button></div>

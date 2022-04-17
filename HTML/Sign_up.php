@@ -5,17 +5,17 @@ include('../PHP/connexion.php');
     }
      $User=new user();
      $result=0;
-     $error1="password incorect";
-     $error2='';
+    //  $error1="password incorect";
+    //  $error2='';
     if(isset($_POST['submit'])){
         if ($_POST["pasword"]==$_POST["pwdverf"]) {
            if($User->creatUser($_POST["usrname"],$_POST["pasword"])){
               header("location:../HTML/login.php");
             }else{
-              echo  $error2="username is aredy exist";
+                $error2='<h3 class="alert alert-danger"><strong>username is aredy exist !!!!!</strong></h3> ';
             }
         }else{
-        echo $error1;
+            $error1='<h3 class="alert alert-danger"><strong>password incorect !!!!!</strong></h3> ';
         }
     }
 ?>
@@ -36,8 +36,15 @@ include("../HTML/navbar.php");
 ?>
     <!-- form -->
     <div class="container ">
-        <!-- <span style="colo"><?php echo $error ;?></span> -->
             <form  method="POST"  id="formsing" autocomplete="oof" onsubmit="return ValidateFormSign(); ">
+            <?php 
+                if (!empty($error1)) {
+                    echo $error1;
+                }
+                if (!empty($error2)) {
+                    echo $error2;
+                }
+            ?>
                 <h1 class="authent text-center fw-bold ">Sign up</h1>
                 <label><b>Username</b></label><br>
                 <input type="text" placeholder="Username" name="usrname" id="usernm" ><br>
