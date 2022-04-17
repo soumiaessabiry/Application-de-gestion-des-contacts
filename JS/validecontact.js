@@ -6,7 +6,7 @@ function  ValidateAddNeContc(){
     var Phone = document.getElementById("phone").value;
     var spphone = document.getElementById("phne");
     var Address = document.getElementById("address").value;
-    var spaddres = document.getElementById("phne");
+    var spaddres = document.getElementById("add");
     var reg=/^[a-zA-Z]{3,}$/;
     var regemail=/^[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$/;
     // let regexphone=/^[(]{1}[0-9]{3}[)]{1}[0-9]{10}$/;
@@ -51,8 +51,8 @@ function  ValidateAddNeContc(){
          spphone.style.color="red";
         return false;
     }
-    if (Phone.length<15) {
-         spphone.innerHTML="confirm phone length must be atleast 10 characters !!";
+    if (Phone.length<12) {
+         spphone.innerHTML="confirm phone length must be atleast 12 characters !!";
          spphone.style.color="Magenta";
         return false;
     }
@@ -66,20 +66,15 @@ function  ValidateAddNeContc(){
         spphone.style.color="green";
     }
     // input= address
-    // if ( Address=="" ) {
-    //      spaddres.innerHTML="Fill the confirm Address !!";
-    //      spaddres.style.color="red";
-    //     return false;
-    // }
-    // if (  Address.length<=255) {
-    //      spaddres.innerHTML="confirm Address length must be atleast characters !!";
-    //      spaddres.style.color="Magenta";
-    //     return false;
-    // }
-    // else{
-    //     spaddres.innerHTML="confirm Address is valide";
-    //     spaddres.style.color="green";
-    // }
+    if (Address.length>255) {
+         spaddres.innerHTML="confirm Address length must be atleast characters !!";
+         spaddres.style.color="Magenta";
+        return false;
+    }
+    else{
+        spaddres.innerHTML="confirm Address is valide";
+        spaddres.style.color="green";
+    }
   
 
 }
