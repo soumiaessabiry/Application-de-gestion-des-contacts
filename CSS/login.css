@@ -66,3 +66,21 @@ input[type=text]:hover {
 .authent{
     color: #444171;
 }
+.card1{
+    width: 100%;
+    height: 100% !important;
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%  {background-color: rgba(111, 111, 235, 0.521);}
+    15%  {background-color: rgba(118, 181, 233, 0.584);}
+    30%  {background-color: rgba(111, 111, 235, 0.521);}
+    45% {background-color: rgba(129, 230, 129, 0.595);}
+    60%  {background-color: rgba(111, 111, 235, 0.521);}
+    100% {background-color: rgba(118, 181, 233, 0.584);}
+  }
+  .card.container-fluid {
+    background: mediumslateblue;
+ }

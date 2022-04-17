@@ -57,8 +57,8 @@
     class contacts extends connexiondb{
 
         // ************************ function inserer contact in db************************
-        public function creatContact($namecnt, $email, $phone, $address){
-           $resulte=$this->connection()->query("INSERT INTO contact (`name`, `email`, `phone`, `address`) VALUES ('$namecnt', '$email', '$phone', '$address')");
+        public function creatContact($namecnt, $email, $phone, $address,$idcompte){
+           $resulte=$this->connection()->query("INSERT INTO contact (`name`, `email`, `phone`, `address`,`id_compte`) VALUES ('$namecnt', '$email', '$phone', '$address',$idcompte)");
             if ($resulte) {
                 return true;
             }else{
@@ -66,9 +66,9 @@
             }
         
         }
-        // *********************function afficher les donner**********************
-        public function afficheContact(){
-            $sql="SELECT * FROM contact";
+        // *********************function afficher les donner*!!!*********************
+        public function afficheContact($id){
+            $sql="SELECT * FROM `contact` WHERE id_compte='$id';";
             $resul=$this->connection()->query($sql);
             if ($resul->num_rows>0) {
                 $data=array();

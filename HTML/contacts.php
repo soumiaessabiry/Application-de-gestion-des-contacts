@@ -1,5 +1,5 @@
 <?php
-include('../PHP/connexion.php');
+require_once('../PHP/connexion.php');
     $selectuser = new select();
     if (isset($_SESSION["id"])) {
         $user=$selectuser->slectUser($_SESSION["id"]);
@@ -8,7 +8,7 @@ include('../PHP/connexion.php');
     }
      $contact=new contacts();
     if(isset($_POST['submit'])){
-       $resulte=$contact->creatContact($_POST["namee"],$_POST["emaile"],$_POST["phonee"],$_POST["addresse"]);
+       $resulte=$contact->creatContact($_POST["namee"],$_POST["emaile"],$_POST["phonee"],$_POST["addresse"],$_SESSION["id"]);
        if ($resulte) {
         echo "Successfully inserted contact";
         }else{
@@ -43,7 +43,7 @@ include('../PHP/connexion.php');
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel" style="color:#9692e8ad;">Add new contact</h5>
+                    <h3 class="modal-title" id="staticBackdropLabel" style="color: #9792E8;">Add new contact</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -74,14 +74,14 @@ include('../PHP/connexion.php');
     </div>
     <!--  -->
     <div class=" d-flex mb-3">
-    <div class="me-auto p-3"><button type="button" class="btn btn-info btn-lg pe-5 fw-bold"><?php echo $user["username"];?></button></div>
+    <div class="me-auto p-3"><button type="button" class="btn btn-lg pe-5 fw-bold bg-secondary bg-gradient"><?php echo $user["username"];?></button></div>
     <div class="p-3 "><button type="button" class="btn btn-warning  btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add new contact</button></div>
     </div> 
     <section class="bg-light p-5">
     <div class="table-responsive" >
         <table class=" table bg-white table-bordered border-dark ">
-        <thead class="bg-light">
-            <tr>
+        <thead class="bg-danger fw-bold">
+            <tr class="fw-bold">
                 <th scope="col">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
@@ -92,18 +92,18 @@ include('../PHP/connexion.php');
         </thead>
         <tbody>
            <?php 
-               $contactes=$contact->afficheContact();
+               $contactes=$contact->afficheContact($_SESSION["id"]);
                 foreach($contactes as $contacte){
               ?> 
-                 <tr>
+                 <tr class="fw-bold">
                 <th data-tile="id"><?php echo $contacte['id']?></th>
                 <td data-tile="Name"><?php echo $contacte['name']?></td>
                 <td data-tile="Email"><?php echo $contacte['email']?></td>
                 <td data-tile="Phone"><?php echo $contacte['phone']?></td>
                 <td data-tile="Address"><?php echo $contacte['address']?></td>
                 <td data-tile="Option" >
-                <button type="button" class="btn btn-danger"><a href="../HTML/contacts.php?delid=<?php echo $contacte["id"] ?>" class="text-decoration-none">Delet</a></button>
-                <button type="button" class="btn btn-success"><a href="../HTML/edite.php?editid=<?php echo $contacte["id"]?>" class="text-decoration-none">edit</a></button>
+                <button type="button" class="btn btn-danger"><a href="../HTML/contacts.php?delid=<?php echo $contacte["id"] ?>" class="text-decoration-none text-light fw-bold">Delet</a></button>
+                <button type="button" class="btn btn-success"><a href="../HTML/edite.php?editid=<?php echo $contacte["id"]?>" class="text-decoration-none text-light fw-bold">edit</a></button>
                 </td>
             </tr>
               

@@ -24,13 +24,13 @@ include('../PHP/connexion.php');
 include("../HTML/navbar2.php");
 ?>
 <div>
-    <div class="card container-fluid" style="width:95%;height:400px">
-        <div class="card-body">
-            <h1 class="card-title text-center fw-bold" >Welcome: <?php echo $user["username"];?> </h1>
-            <h2 class="card-subtitle mb-5 ps-3 fw-bold ">Your Profile : </h2>
-            <h3 class="card-subtitle mb-5 ps-5 ">Username : <?php echo $user["username"];  ?> </h3>
-            <h3 class="card-subtitle mb-5 ps-5">Signup date : <?php echo $user["signup_date"]; ?> </h3>
-            <h3 class="card-subtitle mb-5 ps-5">Last login : </h3>
+    <div class="card  container-fluid bg-light" style="width:95%;height:565px">
+        <div class=" card-body container-fluid">
+            <h1 class="card-title text-center fw-bold mb-5   " ><span  style="color: #C71585;" > Welcome :</span> <?php echo $user["username"];?>. </h1>
+            <h2 class="card-subtitle mb-5 ps-3 fw-bold  text-darck"> Profile : </h2>
+            <h3 class="card-subtitle mb-5 ps-4 fw-bold  "><span  style="color: #C71585;" > Username</span> : <?php echo $user["username"];  ?>. </h3>
+            <h3 class="card-subtitle mb-5 ps-4 fw-bold  "> <span  style="color: #C71585;">Signup date</span> : <?php echo $user["signup_date"]; ?> </h3>
+            <h3 class="card-subtitle mb-5 ps-4 fw-bold "> <span style="color: #C71585;" >Last login</span> :<?php echo $_SESSION['date'] = date("Y-m-d H:i:s", strtotime('-2 hours')); ?>. </h3>
            
         </div>
     </div>
