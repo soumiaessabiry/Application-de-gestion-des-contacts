@@ -29,6 +29,7 @@ require_once('../PHP/connexion.php');
         <link rel="stylesheet" href="../CSS/contacts.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../CSS/addcont.css">
+        <script src="../JS/validecontact.js"></script>
         <title>list contacte</title>
     </head>
     <body>
@@ -67,7 +68,7 @@ require_once('../PHP/connexion.php');
                              <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
 
                         </form>
-                        <script src="../JS/validecontact.js"></script>
+                       
 
                     </body>
                     </html>
@@ -115,19 +116,6 @@ require_once('../PHP/connexion.php');
         </table>
     </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <?php 
         include("../HTML/cdn.php");

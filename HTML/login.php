@@ -1,14 +1,12 @@
 <?php
-include('../PHP/connexion.php');
-   $errpwd="password incorrect";
-   $erraucrep="";
+   require_once('../PHP/connexion.php');
     if (isset($_SESSION["id"])) {
         header("location:../HTML/login.php");
     }
-   $loguser=new login();
-   if (isset($_POST['submite'])) {
+    $loguser=new login();
+    if (isset($_POST['submite'])) {
        if($loguser->loginUser($_POST['usernamelog'],$_POST['pwdlog'])=="trouveresultat"){
-          $_SESSION["user"]=true;
+        //   $_SESSION["user"]=true;
           $_SESSION["id"]=$loguser->idUser();
           header("location:../HTML/profiluser.php");
        }

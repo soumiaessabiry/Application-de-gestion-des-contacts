@@ -20,8 +20,8 @@
         public function creatUser($usernm, $passwrd){
             $result=$this->connection()->query("SELECT * FROM comptes WHERE username='$usernm'");
             if (mysqli_num_rows($result)== 0) {
-                // $pwdchifree=password_hash('$passwrd',PASSWORD_DEFAULT);
-                $query="INSERT INTO comptes(`username`, `password`, `signup_date`) VALUES ('$usernm','$passwrd',sysdate())";
+                $pwdchifree=password_hash($passwrd,PASSWORD_DEFAULT);
+                $query="INSERT INTO comptes(`username`, `password`, `signup_date`) VALUES ('$usernm','$pwdchifree',sysdate())";
                 $result=$this->connection()->query($query);
                 return true;
             }
@@ -29,11 +29,12 @@
     }
     class login extends connexiondb{
         public $id;
+
         public function loginUser($usernamelog,$pwdlog){
-        $resultd=$this->connection()->query("SELECT * FROM comptes WHERE username='$usernamelog'");
+            $resultd=$this->connection()->query("SELECT * FROM comptes WHERE username='$usernamelog'");
             if (mysqli_num_rows($resultd)> 0) {
                 $row=mysqli_fetch_assoc($resultd);
-                if ($usernamelog==$row['username'] && $pwdlog==$row['password']) {
+                if(password_verify($pwdlog,$row['password'])){
                     $this->id=$row['id'];
                     return "trouveresultat";
                 }else{
@@ -43,6 +44,7 @@
                 return"aucun result ";
             }
         }
+
         public function idUser(){
             return $this->id;
         }

@@ -9,7 +9,7 @@ function  ValidateAddNeContc(){
     var spaddres = document.getElementById("add");
     var reg=/^[a-zA-Z]{3,}$/;
     var regemail=/^[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$/;
-    // let regexphone=/^[(]{1}[0-9]{3}[)]{1}[0-9]{10}$/;
+    let passRegex =/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
     // inpute=name
     if ( Name==""  ) {
        spname.innerHTML="Fill the Name ";
@@ -51,16 +51,16 @@ function  ValidateAddNeContc(){
          spphone.style.color="red";
         return false;
     }
-    if (Phone.length<12) {
-         spphone.innerHTML="confirm phone length must be atleast 12 characters !!";
-         spphone.style.color="Magenta";
-        return false;
-    }
-    // if (!regexphone.test(Phone)) {
-    //      spphone.innerHTML="format phone incorect  !!";
+    // if (Phone.length<12) {
+    //      spphone.innerHTML="confirm phone length must be atleast 12 characters !!";
     //      spphone.style.color="Magenta";
     //     return false;
     // }
+    if (!passRegex.test(Phone)) {
+         spphone.innerHTML="format phone incorect  !!";
+         spphone.style.color="Magenta";
+        return false;
+    }
     else{
         spphone.innerHTML="confirm phone is valide";
         spphone.style.color="green";
