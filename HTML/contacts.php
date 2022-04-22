@@ -106,7 +106,7 @@ require_once('../PHP/connexion.php');
                 <td data-tile="Phone"><?php echo $contacte['phone']?></td>
                 <td data-tile="Address"><?php echo $contacte['address']?></td>
                 <td data-tile="Option" >
-                <button type="button" class="btn btn-danger"><a href="../HTML/contacts.php?delid=<?php echo $contacte["id"] ?>" class="text-decoration-none text-light fw-bold">Delet</a></button>
+                <button type="button" class="btn btn-danger"><a onclick="if(window.confirm('Voulez-vous vraiment supprimer ?')){return true;}else{return false;}"href="../HTML/contacts.php?delid=<?php echo $contacte["id"] ?>" class="text-decoration-none text-light fw-bold">Delet</a></button>
                 <button type="button" class="btn btn-success"><a href="../HTML/edite.php?editid=<?php echo $contacte["id"]?>" class="text-decoration-none text-light fw-bold">edit</a></button>
                 </td>
             </tr>

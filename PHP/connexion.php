@@ -72,7 +72,7 @@
         public function afficheContact($id){
             $sql="SELECT * FROM `contact` WHERE id_compte='$id';";
             $resul=$this->connection()->query($sql);
-            if ($resul->num_rows>0) {
+            if ($resul->num_rows>=0) {
                 $data=array();
                 while ($row = $resul->fetch_assoc()) {
                     $data[] = $row;
@@ -94,17 +94,17 @@
                     }
                 }
                 // *************************
-                public function affichContacteById($id)
-                {
-                    $query = "SELECT * FROM contact WHERE id = '$id'";
-                    $rsltafficontct = $this->connection()->query($query);
-                if ($rsltafficontct->num_rows > 0) {
-                    $row = $rsltafficontct->fetch_assoc();
-                    return $row;
-                    }else{
-                    echo "Record not found";
-                    }
-                }
+                // public function affichContacteById($id)
+                // {
+                //     $query = "SELECT * FROM contact WHERE id = '$id'";
+                //     $rsltafficontct = $this->connection()->query($query);
+                // if ($rsltafficontct->num_rows > 0) {
+                //     $row = $rsltafficontct->fetch_assoc();
+                //     return $row;
+                //     }else{
+                //     echo "Record not found";
+                //     }
+                // }
         // ******************************updat data*******************************
                 public function editContact($idcontact){
                 $namecnt = $this->connection()->real_escape_string($_POST['namee']);
